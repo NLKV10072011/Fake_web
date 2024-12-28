@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chào mừng bạn, {{ session['user'] }}!</h1>
+        </div>
+        <p>Bạn sẽ được chuyển hướng đến trang Starbucks ngay lập tức.</p>
+        <script>
+            setTimeout(function(){
+                window.location.href = "https://www.starbucks.vn/";
+            }, 2000);  // Chuyển hướng sau 2 giây
+        </script>
+    </div>
+</body>
+</html>
