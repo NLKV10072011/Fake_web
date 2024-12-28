@@ -22,6 +22,7 @@ def validate_user_data_file():
             users = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         with open(user_data_file, "w") as file:
+            json.dump(default_user_data, file)
         users = default_user_data
         print("Đã khôi phục tệp user_data.json với dữ liệu mặc định.")
     print("\nDữ liệu người dùng hiện tại trong user_data.json:")
